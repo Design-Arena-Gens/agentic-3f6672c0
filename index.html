@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Katzenrassen ? Pr?sentation & Quiz</title>
+  <meta name="description" content="Pr?sentation von 10 Katzenrassen mit Bildern, Fakten und Quiz auf Deutsch." />
+  <link rel="preconnect" href="https://upload.wikimedia.org">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>10 Katzenrassen ? Pr?sentation & Quiz</h1>
+    <nav class="top-nav" aria-label="Hauptnavigation">
+      <button id="tab-presentation" class="tab active" aria-pressed="true">Pr?sentation</button>
+      <button id="tab-quiz" class="tab" aria-pressed="false">Quiz</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="presentation" aria-labelledby="presentation-title">
+      <div class="slide">
+        <div class="media">
+          <img id="breed-image" alt="Bild der Katzenrasse" loading="lazy" />
+        </div>
+        <div class="content">
+          <h2 id="presentation-title">?</h2>
+          <p id="breed-description">?</p>
+          <ul id="breed-facts" class="facts"></ul>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="prev" class="secondary" aria-label="Vorherige Folie">? Zur?ck</button>
+        <div id="progress" class="progress" aria-label="Fortschritt" aria-live="polite">
+          <div id="progress-bar" class="bar" style="width:0%"></div>
+          <span id="progress-text" class="text">0 / 10</span>
+        </div>
+        <button id="next" class="primary" aria-label="N?chste Folie">Weiter ?</button>
+      </div>
+      <p class="hint">Tipp: Pfeiltasten ? ? zum Navigieren benutzen.</p>
+    </section>
+
+    <section id="quiz" hidden aria-labelledby="quiz-title">
+      <h2 id="quiz-title">Quiz: Kennst du die Rassen?</h2>
+      <div id="quiz-intro" class="quiz-intro">
+        <p>Beantworte 10 Multiple-Choice?Fragen zu den Rassen. Viel Erfolg!</p>
+        <button id="start-quiz" class="primary">Quiz starten</button>
+      </div>
+
+      <div id="quiz-card" class="quiz-card" hidden>
+        <div class="quiz-meta">
+          <span id="quiz-counter">Frage 1 / 10</span>
+          <span id="quiz-score">Punkte: 0</span>
+        </div>
+        <p id="quiz-question" class="quiz-question">?</p>
+        <div id="quiz-options" class="options" role="list"></div>
+        <div class="controls">
+          <button id="quiz-next" class="primary" disabled>Weiter</button>
+        </div>
+      </div>
+
+      <div id="quiz-result" class="quiz-result" hidden>
+        <h3>Ergebnis</h3>
+        <p id="result-text">?</p>
+        <button id="retry-quiz" class="secondary">Nochmal spielen</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Bilder werden automatisch ?ber die Wikipedia?API geladen. Inhalte auf Deutsch.</p>
+  </footer>
+
+  <script defer src="/script.js"></script>
+</body>
+</html>
